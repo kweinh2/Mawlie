@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @maw_event.date %>
+</p>
+
+<p>
+  <strong>Where:</strong>
+  <%= @maw_event.where %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @maw_event.name %>
+</p>
+
+<%= link_to 'Edit', edit_maw_event_path(@maw_event) %> |
+<%= link_to 'Back', maw_events_path %>
