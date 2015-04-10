@@ -2,18 +2,21 @@
 <html>
 <head>
   <title>Mawlie</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <%= link_to "Home", welcome_index_path %>
-  <%= link_to "Events", maw_events_path %>
-  <%= link_to "Music", welcome_music_path %>
-  <%= link_to "Community", welcome_community_path %>
-  <%= link_to "About", welcome_about_path %>
-  <%= link_to "Login", root_path %>
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li><%= link_to "Home", welcome_index_path %></li>
+      <li><%= link_to "Events", maw_events_path %></li>
+      <li><%= link_to "Music", welcome_music_path %></li>
+      <li><%= link_to "Community", welcome_community_path %></li>
+      <li><%= link_to "About", welcome_about_path %></li>
+      <li><%= link_to "Login", root_path %></li>
+    </ul>
+  </div>
   
 <%= yield %>
 
