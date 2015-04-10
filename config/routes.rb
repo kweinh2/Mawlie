@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+  get 'welcome/events'
+  get 'welcome/music'
+  get 'welcome/community'
+  get 'welcome/about'
+
   resources :maw_events
 
   resources :events
 
+  root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
