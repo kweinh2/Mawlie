@@ -3,8 +3,8 @@ class MawEventSearch
   
   def initialize(params)
     params ||= {}
-    @date_from = parsed_date(params[:date_from])
-    @date_to = parsed_date(params[:date_to])
+    @date_from = parsed_date(params[:date_from], Date.today.at_beginning_of_month.to_s)
+    @date_to = parsed_date(params[:date_to], Date.today.at_beginning_of_month.next_month.to_s)
   end
   
   def scope
@@ -13,9 +13,10 @@ class MawEventSearch
   
   private
   
-  def parsed_date(date_string)
+  def parsed_date(date_string, default)
     Date.parse(date_string)
   rescue ArgumentError, TypeError
+    default
   end
   
 end
