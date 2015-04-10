@@ -4,7 +4,8 @@ class MawEventsController < ApplicationController
   # GET /maw_events
   # GET /maw_events.json
   def index
-    @maw_events = MawEvent.all
+    @search = MawEventSearch.new(params[:search])
+    @maw_events = @search.scope
   end
 
   # GET /maw_events/1
