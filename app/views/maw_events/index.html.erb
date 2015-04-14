@@ -39,4 +39,10 @@
 
 <br>
 
+<h3>Import Events</h3>
+<%= form_tag import_maw_events_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload Events" %>
+<% end %>
+
 <%= link_to 'New Maw event', new_maw_event_path %>

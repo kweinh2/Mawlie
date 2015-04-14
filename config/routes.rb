@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  resources :maw_events do 
+    collection { post :import }
+  end
+  
+  devise_for :users
   get 'welcome/index'
   get 'welcome/events'
   get 'welcome/music'
   get 'welcome/community'
   get 'welcome/about'
-
-  resources :maw_events
 
   resources :events
 
